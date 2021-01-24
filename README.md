@@ -4,7 +4,6 @@
 
 ### Date Created: Sunday, January 24, 2021
 ### Date Last Updated: Sunday, January 24, 2021
-
 <br/><br/>
 
 The .java files for Assignment 1 are located in:  
