@@ -2,6 +2,8 @@ package csis2450.assignment1;
 
 import java.util.Scanner;
 
+import static csis2450.assignment1.Assignment1Arrays.ARRAY;
+
 /**
  *
  * CSIS 2450: Assignment 1: Part 1
@@ -9,7 +11,7 @@ import java.util.Scanner;
  * @author Anneliese Braunegg
  *
  */
-public class Part1 {
+public final class Part1 {
 	
 	/**
 	 * Return the English ordinal suffix for the given integer.
@@ -39,9 +41,9 @@ public class Part1 {
 	
 	/**
 	 * Prompt the user for an integer between 1 and 50. Once the user
-	 * has entered such an integer, locate the integer in ARRAY and
-	 * print out the user's integer and its position in ARRAY in a
-	 * user-friendly sentence.
+	 * has entered such an integer, locate the integer in ARRAY and print
+	 * out the user's integer and its position in ARRAY in a user-friendly
+	 * sentence.
 	 * 
 	 * @param args: This parameter is not used.
 	 */
@@ -73,12 +75,12 @@ public class Part1 {
 		/* Search ARRAY for the number that the user has
 		 * entered.
 		 */
-		for (int i = 0; i < Assignment1Arrays.ARRAY.length; i++) {			
+		for (int i = 0; i < ARRAY.length; i++) {			
 			/* Once the number has been located, print the number and
 			 * its position in ARRAY to the console in a
 			 * user-friendly sentence.
 			 */
-			if (Assignment1Arrays.ARRAY[i] == userInt) {
+			if (ARRAY[i] == userInt) {
 				String ordinalSuffix = ordinalSuffix(i + 1);
 				System.out.println("The integer you entered was: "
 					+ userInt + ", and it was the " + i + ordinalSuffix
