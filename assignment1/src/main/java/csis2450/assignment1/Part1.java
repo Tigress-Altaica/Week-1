@@ -9,6 +9,9 @@ import static csis2450.assignment1.Assignment1Arrays.ARRAY;
  * CSIS 2450: Assignment 1: Part 1
  * 
  * @author Anneliese Braunegg
+ * 
+ * Date Created: Saturday, January 23, 2021
+ * Date Last Updated: Sunday, January 24, 2021
  *
  */
 public final class Part1 {

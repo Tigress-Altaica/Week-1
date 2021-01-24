@@ -7,6 +7,9 @@ import static csis2450.assignment1.Assignment1Arrays.PAYMENTS;
  * CSIS 2450: Assignment 2: Part 2
  * 
  * @author Anneliese Braunegg
+ * 
+ * Date Created: Saturday, January 23, 2021
+ * Date Last Updated: Sunday, January 24, 2021
  *
  */
 public final class Part2 {

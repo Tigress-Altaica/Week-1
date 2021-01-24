@@ -4,6 +4,12 @@ package csis2450.assignment1;
  * Class to store the hardcoded arrays used in Assignment 1
  * 
  * @author Anneliese Braunegg
+ * 
+ * Date Created: Saturday, January 23, 2021
+ * Date Last Updated: Sunday, January 24, 2021
+ * 
+ * Date Created: Saturday, January 23, 2021
+ * Date Last Updated: Sunday, January 24, 2021
  *
  */
 public class Assignment1Arrays {
