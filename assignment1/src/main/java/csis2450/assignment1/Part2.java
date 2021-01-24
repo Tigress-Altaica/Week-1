@@ -50,24 +50,23 @@ public final class Part2 {
 		}
 		
 		// Account standing
-		AccountStanding accountStanding
-			= accountStanding(numOfZeroPayments);
+		AccountStanding accountStanding = accountStanding(custIndex);
 		System.out.print(accountStanding.getStringValue()
 			+ System.lineSeparator());
 	}
 	
 	/**
-	 * Return the account standing for an account with the given number
-	 * of zero (0) payments.
+	 * Return the account standing for the account at the specified index
+	 * in the PAYMENTS array.
 	 * 
-	 * @param numOfZeroPayments: The number of zero (0) payments
+	 * @param acctIndex: The index of the account in PAYMENTS
 	 * 
-	 * @return: The corresponding account standing
+	 * @return: The standing of the account
 	 */
 	static final AccountStanding accountStanding(
-			int numOfZeroPayments) {
-		
-		assert numOfZeroPayments >= 0;
+			int acctIndex) {
+				
+		int numOfZeroPayments = numOfZeroPayments(acctIndex);
 		
 		AccountStanding accountStanding;
 		
@@ -85,6 +84,27 @@ public final class Part2 {
 		}
 		
 		return accountStanding;
+	}
+	
+	
+	/**
+	 * Return the number of zero (0) payments that exist for the account
+	 * at the specified index in the PAYMENTS array.
+	 * 
+	 * @param acctIndex: The index of the account in PAYMENTS
+	 * 
+	 * @return: The number of zero (0) payments that exist for the account
+	 */
+	private static final int numOfZeroPayments(int acctIndex) {
+		int numOfZeroPayments = 0;
+		
+		for (int i = 1; i < PAYMENTS[acctIndex].length; i++) {
+			if (PAYMENTS[acctIndex][i] == 0) {
+				numOfZeroPayments += 1;
+			}
+		}
+		
+		return numOfZeroPayments;
 	}
 	
 	/**

@@ -21,23 +21,14 @@ public class Part3 {
 	 */
 	private static final void printOutCustomerMenu() {
 		System.out.println("---------------------------------------------------");
-		System.out.println();
 		System.out.println("Customer Menu");
-		System.out.println();
 		System.out.println("---------------------------------------------------");
-		System.out.println();
 		System.out.println("1. Find customer by account number.");
-		System.out.println();
 		System.out.println("2. Report customers with any missed payments.");
-		System.out.println();
 		System.out.println("3. Report customers with \"Closed\" status.");
-		System.out.println();
 		System.out.println("4. Exit");
-		System.out.println();
 		System.out.println("---------------------------------------------------");
-		System.out.println();
 		System.out.println("Enter 1, 2, 3, or 4 here:");
-		System.out.println();
 	}
 	
 	/**
@@ -54,33 +45,39 @@ public class Part3 {
 	 * @return: The inputted scanner, after use in this method
 	 */
 	private static final Scanner executeMenuOption1(Scanner scanner) {
-		System.out.print("Please enter an account"
-				+ " number: ");
-			boolean userHasEnteredIntegralAcctNum = false;
-			int acctNum = -1;
-			while (!userHasEnteredIntegralAcctNum) {
-				if (scanner.hasNext()) {
-					if (!scanner.hasNextInt()) {
-						scanner.next();
-						System.out.println("Please enter an"
-							+ " integer for the account"
-							+ " number");
-						continue;
-					}
-					acctNum = scanner.nextInt();
+		System.out.print("Please enter an account number: ");
+		
+		int acctNum = -1;
+		
+		/* Receive an integral account number from the user. */
+		boolean userHasEnteredIntegralAcctNum = false;
+		while (!userHasEnteredIntegralAcctNum) {
+			if (scanner.hasNext()) {
+				if (!scanner.hasNextInt()) {
+					scanner.next();
+					System.out.print("Please enter an integer for"
+						+ " the account number: ");
+					continue;
 				}
+				acctNum = scanner.nextInt();
+				userHasEnteredIntegralAcctNum = true;
 			}
-			int custIndex = custIndexForAcctNum(acctNum);
-			if (custIndex == -1) {
-				System.out.println("No customer record"
-					+ " exists for account number: "
-					+ acctNum);
-			}
-			else {
-				Part2.printOutCustomerPaymentHistory(custIndex);
-			}
-			
-			return scanner;
+		}
+		
+		/* Print out the customer record for the user-specified account
+		 * number. */
+		int custIndex = custIndexForAcctNum(acctNum);
+		if (custIndex == -1) {
+			System.out.println("No customer record exists for account"
+				+ " number: " + acctNum);
+			System.out.println();
+		}
+		else {
+			Part2.printOutCustomerPaymentHistory(custIndex);
+			System.out.println();
+		}
+		
+		return scanner;
 	}
 	
 	/**
@@ -91,12 +88,17 @@ public class Part3 {
 	 *  one (1) payment of zero (0).
 	 */
 	private static final void executeMenuOption2() {
+		System.out.println();
+		
 		Part2.printOutPaymentHistoryHeader();
+		
 		for (int i = 0; i < CUSTOMERS.length; i++) {
 			if (customerHasAnyZeroPayment(i)) {
 				Part2.printOutCustomerPaymentHistory(i);
 			}
 		}
+		
+		System.out.println();
 	}
 	
 	/**
@@ -108,12 +110,15 @@ public class Part3 {
 	 */
 	private static final void executeMenuOption3() {
 		Part2.printOutPaymentHistoryHeader();
+		
 		for (int i = 0; i < CUSTOMERS.length; i++) {
 			if (AccountStanding.CLOSED.equals(
 					Part2.accountStanding(i))) {
 				Part2.printOutCustomerPaymentHistory(i);
 			}
 		}
+		
+		System.out.println();
 	}
 	
 	/**
@@ -128,6 +133,9 @@ public class Part3 {
 	 * @return The updated value of shouldCloseMenu
 	 */
 	private static final boolean executeMenuOption4(boolean shouldCloseMenu) {
+		System.out.println("The menu has been exited.");
+		System.out.println();
+
 		shouldCloseMenu = true;
 		
 		return shouldCloseMenu;
@@ -163,7 +171,7 @@ public class Part3 {
 	 * 	payment of zero (0)
 	 */
 	private static final boolean customerHasAnyZeroPayment(int custIndex) {
-		for (int payIndex = 1; payIndex < PAYMENTS.length; payIndex++) {
+		for (int payIndex = 1; payIndex < PAYMENTS[custIndex].length; payIndex++) {
 			if (PAYMENTS[custIndex][payIndex] == 0) {
 				return true;
 			}
