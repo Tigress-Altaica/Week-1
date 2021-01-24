@@ -45,6 +45,7 @@ public class Part3 {
 	 * @return: The inputted scanner, after use in this method
 	 */
 	private static final Scanner executeMenuOption1(Scanner scanner) {
+		System.out.println();
 		System.out.print("Please enter an account number: ");
 		
 		int acctNum = -1;
@@ -133,6 +134,7 @@ public class Part3 {
 	 * @return The updated value of shouldCloseMenu
 	 */
 	private static final boolean executeMenuOption4(boolean shouldCloseMenu) {
+		System.out.println();
 		System.out.println("The menu has been exited.");
 		System.out.println();
 
@@ -241,6 +243,10 @@ public class Part3 {
 					default:
 						System.out.println(pleaseEnterMessage);
 				}
+			}
+			
+			if (!shouldCloseMenu) {
+				System.out.print(pleaseEnterMessage);
 			}
 		}
 		
