@@ -1,9 +1,9 @@
 # Week-1
 
-# README Author: Anneliese Braunegg
+## README Author: Anneliese Braunegg
 
-# Date Created: Sunday, January 24, 2021
-# Date Last Updated: Sunday, January 24, 2021
+## Date Created: Sunday, January 24, 2021
+## Date Last Updated: Sunday, January 24, 2021
 
 The .java files for Assignment 1 are located in:
 assignment1\src\main\java\csis2450\assignment1
