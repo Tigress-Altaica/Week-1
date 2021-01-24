@@ -26,7 +26,10 @@ public final class Part1 {
 	private static final String ordinalSuffix(int intNum) {
 		String ordinalSuffix;
 		
-		if (intNum % 10 == 1) {
+		if (10 < intNum % 100 && intNum % 100 < 20) {
+			ordinalSuffix = "th";
+		}
+		else if (intNum % 10 == 1) {
 			ordinalSuffix = "st";
 		}
 		else if (intNum % 10 == 2) {
@@ -67,7 +70,7 @@ public final class Part1 {
 				if (!scanner.hasNextInt()) {
 					scanner.next();
 					System.out.println("Please enter an integer"
-							+ " between 1 and 50");
+							+ " between 1 and 50.");
 					continue;
 				}
 				
@@ -86,8 +89,9 @@ public final class Part1 {
 			if (ARRAY[i] == userInt) {
 				String ordinalSuffix = ordinalSuffix(i + 1);
 				System.out.println("The integer you entered was: "
-					+ userInt + ", and it was the " + i + ordinalSuffix
-					+ " integer in the stored array of integers.");
+					+ userInt + ", and it was the " + (i + 1)
+					+ ordinalSuffix + " integer in the stored array of"
+					+ " integers.");
 				break;
 			}
 		}
