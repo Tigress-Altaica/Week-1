@@ -58,23 +58,30 @@ public final class Part1 {
 		 * enter such an integer.
 		 */
 		System.out.println("Please enter an integer between 1 and 50"
-			+ " (inclusive). Your integer will be located in the stored"
-			+ " integer array, and you will receive a printed message"
-			+ " telling you the integer you entered and its position in the"
-			+ " array.");
+			+ " (inclusive). Your integer will be located\n"
+			+ "in the stored integer array, and you will receive a printed"
+			+ " message telling you the\n"
+			+ "integer you entered and its position in the array.");
+		System.out.println();
+		System.out.print("Integer to locate: ");
 		
 		Scanner scanner = new Scanner(System.in);
+		String pleaseEnterMessage = "Please enter an integer"
+				+ " between 1 and 50: ";
 		int userInt = -1;
-		while (userInt < 0 || 50 < userInt) {
+		while (userInt < 1 || 50 < userInt) {
 			if (scanner.hasNext()) {
 				if (!scanner.hasNextInt()) {
 					scanner.next();
-					System.out.println("Please enter an integer"
-							+ " between 1 and 50.");
+					System.out.print(pleaseEnterMessage);
 					continue;
 				}
 				
 				userInt = scanner.nextInt();
+				
+				if (userInt < 1 || 50 < userInt) {
+					System.out.print(pleaseEnterMessage);
+				}
 			}
 		}
 		
@@ -88,10 +95,11 @@ public final class Part1 {
 			 */
 			if (ARRAY[i] == userInt) {
 				String ordinalSuffix = ordinalSuffix(i + 1);
+				System.out.println();
 				System.out.println("The integer you entered was: "
 					+ userInt + ", and it was the " + (i + 1)
-					+ ordinalSuffix + " integer in the stored array of"
-					+ " integers.");
+					+ ordinalSuffix + " integer in the stored array of\n"
+					+ "integers.");
 				break;
 			}
 		}

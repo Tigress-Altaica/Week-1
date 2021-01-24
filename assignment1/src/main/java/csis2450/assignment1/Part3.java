@@ -191,7 +191,7 @@ public class Part3 {
 		
 		/* Respond to user input. */
 		Scanner scanner = new Scanner(System.in);
-		String pleaseEnterMessage = "Please enter 1, 2, 3, or 4";
+		String pleaseEnterMessage = "Please enter 1, 2, 3, or 4: ";
 		
 		boolean shouldCloseMenu = false;
 		int optionInt = -1;
@@ -201,7 +201,7 @@ public class Part3 {
 				/* Handle non-integral input. */
 				if (!scanner.hasNextInt()) {
 					scanner.next();
-					System.out.println(pleaseEnterMessage);
+					System.out.print(pleaseEnterMessage);
 					continue;
 				}
 				
