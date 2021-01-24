@@ -19,15 +19,10 @@ public final class Part2 {
 	 */
 	static final void printOutPaymentHistoryHeader() {
 		System.out.println("-------------------------------------------------------------");
-		System.out.println();
 		System.out.println("Customer Payment History");
-		System.out.println();
 		System.out.println("-------------------------------------------------------------");
-		System.out.println();
 		System.out.println("Name Account 01 02 03 04 05 06 07 08 09 10 11 12 Standing");
-		System.out.println();
 		System.out.println("-------------------------------------------------------------");
-		System.out.println();
 	}
 	
 	/**
@@ -41,11 +36,11 @@ public final class Part2 {
 		System.out.print(CUSTOMERS[custIndex] + " ");
 		
 		// Account number
-		System.out.print((int) PAYMENTS[custIndex][0]);
+		System.out.print((int) PAYMENTS[custIndex][0] + " ");
 		
 		// Payments
 		int numOfZeroPayments = 0;
-		for (int payIndex = 1; payIndex < PAYMENTS.length; payIndex++) {
+		for (int payIndex = 1; payIndex < PAYMENTS[0].length; payIndex++) {
 			double payAmt = PAYMENTS[custIndex][payIndex];
 			System.out.print(payAmt + " ");
 			
