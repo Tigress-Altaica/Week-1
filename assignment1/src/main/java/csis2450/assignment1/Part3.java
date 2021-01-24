@@ -56,8 +56,8 @@ public class Part3 {
 		return false;
 	}
 	
-	// TODO: Break out menu option handling for options 1-4 into their own
-	//	methods?
+	// TODO: Break out menu option handling for options 1-4 into separate
+	//	methods.
 	/**
 	 * Print out an interactive menu for interacting with customer accounts.
 	 * 
@@ -87,12 +87,28 @@ public class Part3 {
 				
 				switch (optionInt) {
 					case 1:
-						// TODO: Prompt the user for an account number,
-						//	as a String.
+						System.out.print("Please enter an account"
+							+ " number: ");
+						boolean userHasEnteredIntegralAcctNum = false;
+						int acctNum = -1;
+						while (!userHasEnteredIntegralAcctNum) {
+							if (scanner.hasNext()) {
+								if (!scanner.hasNextInt()) {
+									scanner.next();
+									System.out.println("Please enter an"
+										+ " integer for the account"
+										+ " number");
+									continue;
+								}
+								acctNum = scanner.nextInt();
+							}
+						}
+						// TODO: Write method custIndexForAcctNum.
+						int custIndex = custIndexForAcctNum(acctNum);
 						if (custIndex == -1) {
 							System.out.println("No customer record"
-								+ " exists for account number "
-								+ accountNumString);
+								+ " exists for account number: "
+								+ acctNum);
 						}
 						else {
 							Part2.printOutCustomerPaymentHistory(custIndex);

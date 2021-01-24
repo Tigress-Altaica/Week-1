@@ -51,11 +51,11 @@ public final class Part1 {
 		/* Prompt the user for an integer between 1 and 50 until they
 		 * enter such an integer.
 		 */
-		System.out.println("Please type an integer between 1 and 50"
-			+ " (inclusive) and then press the Enter key. Your integer"
-			+ " will be located in the stored integer array, and you"
-			+ " will receive a message telling you the integer you"
-			+ " entered and its position in the array.");
+		System.out.println("Please enter an integer between 1 and 50"
+			+ " (inclusive). Your integer will be located in the stored"
+			+ " integer array, and you will receive a printed message"
+			+ " telling you the integer you entered and its position in the"
+			+ " array.");
 		
 		Scanner scanner = new Scanner(System.in);
 		int userInt = -1;
