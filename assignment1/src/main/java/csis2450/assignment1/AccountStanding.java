@@ -15,4 +15,5 @@ enum AccountStanding {
 	final String getStringValue() {
 		return this.stringValue;
 	}
+	
 }

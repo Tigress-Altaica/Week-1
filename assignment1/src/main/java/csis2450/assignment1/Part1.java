@@ -61,14 +61,14 @@ public final class Part1 {
 		int userInt = -1;
 		while (userInt < 0 || 50 < userInt) {
 			if (scanner.hasNext()) {
-				if (scanner.hasNextInt()) {
-					userInt = scanner.nextInt();
-				}
-				else {
+				if (!scanner.hasNextInt()) {
 					scanner.next();
 					System.out.println("Please enter an integer"
 							+ " between 1 and 50");
+					continue;
 				}
+				
+				userInt = scanner.nextInt();
 			}
 		}
 		
