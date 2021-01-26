@@ -21,7 +21,7 @@ public final class Part2 {
 		System.out.println("-------------------------------------------------------------");
 		System.out.println("Customer Payment History");
 		System.out.println("-------------------------------------------------------------");
-		System.out.println("Name Account 01 02 03 04 05 06 07 08 09 10 11 12 Standing");
+		System.out.println("Name                  Account    01      02      03      04      05      06      07      08      09      10      11      12      Standing");
 		System.out.println("-------------------------------------------------------------");
 	}
 	
@@ -36,7 +36,7 @@ public final class Part2 {
 		System.out.printf("%-20s  ", CUSTOMERS[custIndex]);
 		
 		// Account number
-		System.out.print((int) PAYMENTS[custIndex][0] + " ");
+		System.out.printf("%d     ", (int) PAYMENTS[custIndex][0]);
 		
 		// Payments
 		int numOfZeroPayments = 0;
@@ -51,7 +51,7 @@ public final class Part2 {
 		
 		// Account standing
 		AccountStanding accountStanding = accountStanding(custIndex);
-		System.out.print(" " + accountStanding.getStringValue()
+		System.out.print("  " + accountStanding.getStringValue()
 			+ System.lineSeparator());
 	}
 	
