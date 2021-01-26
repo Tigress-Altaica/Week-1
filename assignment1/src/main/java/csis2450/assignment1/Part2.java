@@ -33,7 +33,7 @@ public final class Part2 {
 	 */
 	static final void printOutCustomerPaymentHistory(int custIndex) {
 		// Customer name
-		System.out.print(CUSTOMERS[custIndex] + " ");
+		System.out.printf("%-20s  ", CUSTOMERS[custIndex]);
 		
 		// Account number
 		System.out.print((int) PAYMENTS[custIndex][0] + " ");
@@ -42,7 +42,7 @@ public final class Part2 {
 		int numOfZeroPayments = 0;
 		for (int payIndex = 1; payIndex < PAYMENTS[0].length; payIndex++) {
 			double payAmt = PAYMENTS[custIndex][payIndex];
-			System.out.print(payAmt + " ");
+			System.out.printf("%7.2f ", payAmt);
 			
 			if (payAmt == 0) {
 				numOfZeroPayments += 1;
@@ -51,7 +51,7 @@ public final class Part2 {
 		
 		// Account standing
 		AccountStanding accountStanding = accountStanding(custIndex);
-		System.out.print(accountStanding.getStringValue()
+		System.out.print(" " + accountStanding.getStringValue()
 			+ System.lineSeparator());
 	}
 	
