@@ -9,7 +9,7 @@ import static csis2450.assignment1.Assignment1Arrays.PAYMENTS;
  * @author Anneliese Braunegg
  * 
  * Date Created: Saturday, January 23, 2021
- * Date Last Updated: Sunday, January 24, 2021
+ * Date Last Updated: Saturday, January 30, 2021
  *
  */
 public final class Part2 {
